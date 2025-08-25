@@ -7,7 +7,7 @@ async function handleTicketSelect(interaction) {
     const { guild, user, values } = interaction;
     if (!guild) {
       return interaction.reply({
-        content: '❌ This action must be used in a server.',
+        content: 'This action must be used in a server.',
         ephemeral: true
       });
     }
@@ -35,7 +35,7 @@ async function handleTicketSelect(interaction) {
     const maxTickets = config.maxTicketsPerUser ?? 3;
     if (openTicketCount >= maxTickets) {
       return interaction.reply({
-        content: `❌ You already have ${openTicketCount} open ticket(s). Limit: ${maxTickets}.`,
+        content: `You already have ${openTicketCount} open ticket(s). Limit: ${maxTickets}.`,
         ephemeral: true
       });
     }
